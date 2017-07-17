@@ -64,6 +64,14 @@ class ProductManager {
         appDelegate.saveContext()
     }
     
+    func deleteProduct(indexPath: Int) {
+        let products = fetchProducts()
+        
+        context.delete(products[indexPath])
+        
+        appDelegate.saveContext()
+    }
+    
     func fetchProducts() -> [Product] {
         var products: [Product] = []
 

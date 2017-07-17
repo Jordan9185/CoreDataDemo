@@ -15,6 +15,7 @@
 		980F77751F1C897400AA3EB2 /* ProductManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980F77741F1C897400AA3EB2 /* ProductManager.swift */; };
 		980F77771F1C89E300AA3EB2 /* ProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980F77761F1C89E300AA3EB2 /* ProductsTableViewController.swift */; };
 		980F77791F1C94AC00AA3EB2 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980F77781F1C94AC00AA3EB2 /* ProductTableViewCell.swift */; };
+		980F777D1F1CA24100AA3EB2 /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980F777C1F1CA24100AA3EB2 /* AddProductViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		980F77741F1C897400AA3EB2 /* ProductManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductManager.swift; sourceTree = "<group>"; };
 		980F77761F1C89E300AA3EB2 /* ProductsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsTableViewController.swift; sourceTree = "<group>"; };
 		980F77781F1C94AC00AA3EB2 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		980F777C1F1CA24100AA3EB2 /* AddProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +64,8 @@
 			children = (
 				980F775F1F1C800F00AA3EB2 /* AppDelegate.swift */,
 				980F77741F1C897400AA3EB2 /* ProductManager.swift */,
-				980F77761F1C89E300AA3EB2 /* ProductsTableViewController.swift */,
-				980F77781F1C94AC00AA3EB2 /* ProductTableViewCell.swift */,
+				980F777A1F1CA20000AA3EB2 /* Main */,
+				980F777B1F1CA21A00AA3EB2 /* New Group */,
 				980F77631F1C800F00AA3EB2 /* Main.storyboard */,
 				980F77691F1C800F00AA3EB2 /* Assets.xcassets */,
 				980F776E1F1C800F00AA3EB2 /* Info.plist */,
@@ -71,6 +73,23 @@
 				980F776B1F1C800F00AA3EB2 /* LaunchScreen.storyboard */,
 			);
 			path = CoreDataDemo;
+			sourceTree = "<group>";
+		};
+		980F777A1F1CA20000AA3EB2 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				980F77761F1C89E300AA3EB2 /* ProductsTableViewController.swift */,
+				980F77781F1C94AC00AA3EB2 /* ProductTableViewCell.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		980F777B1F1CA21A00AA3EB2 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				980F777C1F1CA24100AA3EB2 /* AddProductViewController.swift */,
+			);
+			name = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +166,7 @@
 			files = (
 				980F77751F1C897400AA3EB2 /* ProductManager.swift in Sources */,
 				980F77771F1C89E300AA3EB2 /* ProductsTableViewController.swift in Sources */,
+				980F777D1F1CA24100AA3EB2 /* AddProductViewController.swift in Sources */,
 				980F77791F1C94AC00AA3EB2 /* ProductTableViewCell.swift in Sources */,
 				980F77681F1C800F00AA3EB2 /* CoreDataDemo.xcdatamodeld in Sources */,
 				980F77601F1C800F00AA3EB2 /* AppDelegate.swift in Sources */,

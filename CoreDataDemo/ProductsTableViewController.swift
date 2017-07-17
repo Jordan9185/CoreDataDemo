@@ -14,6 +14,14 @@ class ProductsTableViewController: UITableViewController {
     let productManager = ProductManager()
     var localProducts: [LocalProduct] = []
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        localProducts = productManager.fetchProducts()
+        
+        productsTableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

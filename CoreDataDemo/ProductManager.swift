@@ -20,13 +20,13 @@ class ProductManager {
     
     let context = appDelegate.persistentContainer.viewContext
     
-    func addProduct(product: Product) {
+    func addProduct(id: String, name: String, price: Double) {
 
         let newProduct = Product(context: context)
-        
-        newProduct.id = product.id
-        newProduct.name = product.name
-        newProduct.price = product.price
+
+        newProduct.id = id
+        newProduct.name = name
+        newProduct.price = price
         
         appDelegate.saveContext()
         

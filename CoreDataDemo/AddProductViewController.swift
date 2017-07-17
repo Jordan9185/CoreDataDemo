@@ -20,8 +20,6 @@ class AddProductViewController: UIViewController {
 
     @IBAction func addProductTapped(_ sender: UIButton) {
         
-        let product: Product = Product()
-        
         guard
         let id = idTextField.text,
         let name = nameTextField.text,
@@ -30,11 +28,7 @@ class AddProductViewController: UIViewController {
             return
         }
         
-        product.id = id
-        product.name = name
-        product.price = Double(price)!
-        
-        productManager.addProduct(product: product)
+        productManager.addProduct(id: id, name: name, price: Double(price)!)
         self.navigationController?.popViewController(animated: true)
         
     }

@@ -48,6 +48,22 @@ class ProductManager {
             return products
     }
     
+    func updateProduct(indexPath: Int, id:String?, name: String?, price: Double?) {
+        let products = fetchProducts()
+        
+        if let productId = id {
+            products[indexPath].id = productId
+        }
+        if let productName = name {
+            products[indexPath].name = productName
+        }
+        if let productPrice = price {
+            products[indexPath].price = productPrice
+        }
+        
+        appDelegate.saveContext()
+    }
+    
     func fetchProducts() -> [Product] {
         var products: [Product] = []
 

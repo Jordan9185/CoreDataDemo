@@ -16,10 +16,10 @@ class SearchProductViewController: UIViewController {
 
     @IBAction func searchTapped(_ sender: Any) {
         var results: String = ""
-        let localProducts = productManager.searchProduct(productName: productNameTextField.text!)
+        let products = productManager.searchProduct(productName: productNameTextField.text!)
         
-        for localProduct in localProducts {
-            results.append("\(localProduct.name!) \n")
+        for product in products {
+            results.append("\(product.name!) \n")
         }
         
         searchResultsLabel.text = results

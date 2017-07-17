@@ -25,26 +25,18 @@
                                     <rect key="frame" x="0.0" y="20" width="375" height="71"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFo-F0-9tu" userLabel="新增">
-                                            <rect key="frame" x="0.0" y="0.0" width="94" height="71"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="187.5" height="71"/>
                                             <state key="normal" title="新增"/>
                                             <connections>
                                                 <segue destination="z7q-fT-Hal" kind="show" id="Kny-c6-ufg"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M9N-TE-lVW" userLabel="查詢">
-                                            <rect key="frame" x="94" y="0.0" width="93.5" height="71"/>
+                                            <rect key="frame" x="187.5" y="0.0" width="187.5" height="71"/>
                                             <state key="normal" title="查詢"/>
                                             <connections>
                                                 <segue destination="ghg-0n-Eez" kind="show" id="ixl-A9-h2B"/>
                                             </connections>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Nu-kK-ORi" userLabel="更新">
-                                            <rect key="frame" x="187.5" y="0.0" width="94" height="71"/>
-                                            <state key="normal" title="更新"/>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epe-VP-kJm" userLabel="刪除">
-                                            <rect key="frame" x="281.5" y="0.0" width="93.5" height="71"/>
-                                            <state key="normal" title="刪除"/>
                                         </button>
                                     </subviews>
                                 </stackView>
@@ -92,6 +84,7 @@
                                     <outlet property="idLabel" destination="a7h-MY-TQW" id="jVb-wo-WNQ"/>
                                     <outlet property="nameLabel" destination="aZG-d5-g8b" id="I3N-Zg-wsL"/>
                                     <outlet property="priceLabel" destination="L7f-5h-JmN" id="jJv-gl-li7"/>
+                                    <segue destination="xpS-bN-mfC" kind="show" identifier="showEditViewController" id="Eve-Hk-j6g"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -251,7 +244,85 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KxM-r3-AU1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="980" y="850.52473763118451"/>
+            <point key="canvasLocation" x="942" y="851"/>
+        </scene>
+        <!--更新-->
+        <scene sceneID="bXQ-Rv-6Cg">
+            <objects>
+                <viewController title="更新" id="xpS-bN-mfC" customClass="UpdateProductViewController" customModule="CoreDataDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yFf-Ca-7eY"/>
+                        <viewControllerLayoutGuide type="bottom" id="74f-Yf-qis"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eCY-ki-Fel">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lEf-Ev-k9A">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ID" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RDs-Fr-iVC">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="prR-vH-4xp"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dkN-fX-Fkp">
+                                        <rect key="frame" x="0.0" y="50" width="375" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="hfV-Bc-M6d"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GcI-LT-ibe">
+                                        <rect key="frame" x="0.0" y="100" width="375" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="WeT-sa-i5D"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZl-AQ-MEI">
+                                        <rect key="frame" x="0.0" y="150" width="375" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="atl-Yi-8RE"/>
+                                        </constraints>
+                                        <state key="normal" title="更新產品"/>
+                                        <connections>
+                                            <action selector="addProductTapped:" destination="z7q-fT-Hal" eventType="touchUpInside" id="ffR-q5-zqB"/>
+                                            <action selector="updateProductTapped:" destination="xpS-bN-mfC" eventType="touchUpInside" id="EVP-cH-DEd"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bvs-Jl-060">
+                                        <rect key="frame" x="0.0" y="200" width="375" height="403"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lEf-Ev-k9A" firstAttribute="leading" secondItem="eCY-ki-Fel" secondAttribute="leading" id="Qey-Gz-lOY"/>
+                            <constraint firstItem="74f-Yf-qis" firstAttribute="top" secondItem="lEf-Ev-k9A" secondAttribute="bottom" id="YUF-VR-Abb"/>
+                            <constraint firstAttribute="trailing" secondItem="lEf-Ev-k9A" secondAttribute="trailing" id="kGC-zI-Pln"/>
+                            <constraint firstItem="lEf-Ev-k9A" firstAttribute="top" secondItem="yFf-Ca-7eY" secondAttribute="bottom" id="kpG-g4-Pcg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="idTextField" destination="RDs-Fr-iVC" id="pc0-GA-dan"/>
+                        <outlet property="nameTextField" destination="dkN-fX-Fkp" id="VDz-k4-44Z"/>
+                        <outlet property="priceTextField" destination="GcI-LT-ibe" id="c0u-C6-T6D"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="USb-lx-0VA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1974" y="851"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0CY-ll-8QY">

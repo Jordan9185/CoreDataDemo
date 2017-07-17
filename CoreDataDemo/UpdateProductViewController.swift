@@ -11,18 +11,29 @@ import UIKit
 class UpdateProductViewController: UIViewController {
 
     let productManager = ProductManager()
-    @IBOutlet var productNameTextField: UITextField!
-    
-    @IBAction func searchTapped(_ sender: Any) {
- //       productManager.updateProduct(productName: productNameTextField.text!)
-        
-    }
-    
+    var indexOfRow: Int?
+    @IBOutlet var idTextField: UITextField!
+    @IBOutlet var nameTextField: UITextField!
+    @IBOutlet var priceTextField: UITextField!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let products = productManager.fetchProducts()
+        idTextField.text = products[indexOfRow!].id
+        nameTextField.text = products[indexOfRow!].name
+        priceTextField.text = "\(products[indexOfRow!].price)"
         // Do any additional setup after loading the view.
     }
 
 
+    @IBAction func updateProductTapped(_ sender: Any) {
+        productManager.updateProduct(
+            indexPath: indexOfRow!,
+            id: idTextField.text,
+            name: nameTextField.text,
+            price: Double(priceTextField.text!)
+        )
+        
+        self.navigationController?.popViewController(animated: true)
+    }
 }

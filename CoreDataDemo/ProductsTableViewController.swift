@@ -13,6 +13,7 @@ class ProductsTableViewController: UITableViewController {
     @IBOutlet var productsTableView: UITableView!
     let productManager = ProductManager()
     var products: [Product] = []
+    var selectedRow: Int?
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -44,5 +45,20 @@ class ProductsTableViewController: UITableViewController {
         cell.priceLabel.text = "price: \(products[indexPath.row].price)"
         
         return cell
+    }
+    
+
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        
+        selectedRow = indexPath.row
+        return indexPath
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if segue.identifier == "showEditViewController" {
+            let destinationVC = segue.destination as! UpdateProductViewController
+            destinationVC.indexOfRow = selectedRow
+        }
     }
 }

@@ -12,12 +12,6 @@ import CoreData
 
 let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
-struct LocalProduct {
-    let id: String
-    let name: String
-    let price: Double
-}
-
 enum fetchDataError: Error {
     case fetchIdError, fetchNameError, fetchPriceError
 }
@@ -26,69 +20,46 @@ class ProductManager {
     
     let context = appDelegate.persistentContainer.viewContext
     
-    func addProduct(localProduct: LocalProduct) {
+    func addProduct(product: Product) {
 
-        let product = Product(context: context)
+        let newProduct = Product(context: context)
         
-        product.id = localProduct.id
-        product.name = localProduct.name
-        product.price = localProduct.price
+        newProduct.id = product.id
+        newProduct.name = product.name
+        newProduct.price = product.price
         
         appDelegate.saveContext()
         
     }
     
-    func searchProduct(productName: String) -> [LocalProduct] {
-        var localProducts: [LocalProduct] = []
+    func searchProduct(productName: String) -> [Product] {
+        var products: [Product] = []
         
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Product")
         fetchRequest.predicate = NSPredicate(format: "name contains %@", productName)
         
         do {
             
-            let products = try context.fetch(fetchRequest) as! [Product]
-            
-            for product in products {
-                guard let productId = product.id else { throw fetchDataError.fetchIdError}
-                guard let productName = product.name else { throw fetchDataError.fetchNameError}
-                
-                localProducts.append(
-                    LocalProduct(id: productId, name: productName, price: product.price)
-                )
-                
-            }
-            
-
+            products = try context.fetch(fetchRequest) as! [Product]
 
         } catch (let error) {
             print(error)
         }
-            return localProducts
+            return products
     }
     
-    func fetchProducts() -> [LocalProduct] {
+    func fetchProducts() -> [Product] {
         var products: [Product] = []
-        var localProducts: [LocalProduct] = []
-        
+
         do {
             
             products = try context.fetch(Product.fetchRequest())
-    
-            for product in products {
-                guard let productId = product.id else { throw fetchDataError.fetchIdError}
-                guard let productName = product.name else { throw fetchDataError.fetchNameError}
-
-                localProducts.append(
-                    LocalProduct(id: productId, name: productName, price: product.price)
-                )
-
-            }
             
         } catch (let error) {
             print(error)
         }
         
-        return localProducts
+        return products
     }
     
 }

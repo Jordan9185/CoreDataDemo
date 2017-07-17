@@ -38,6 +38,34 @@ class ProductManager {
         
     }
     
+    func searchProduct(productName: String) -> [LocalProduct] {
+        var localProducts: [LocalProduct] = []
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Product")
+        fetchRequest.predicate = NSPredicate(format: "name contains %@", productName)
+        
+        do {
+            
+            let products = try context.fetch(fetchRequest) as! [Product]
+            
+            for product in products {
+                guard let productId = product.id else { throw fetchDataError.fetchIdError}
+                guard let productName = product.name else { throw fetchDataError.fetchNameError}
+                
+                localProducts.append(
+                    LocalProduct(id: productId, name: productName, price: product.price)
+                )
+                
+            }
+            
+
+
+        } catch (let error) {
+            print(error)
+        }
+            return localProducts
+    }
+    
     func fetchProducts() -> [LocalProduct] {
         var products: [Product] = []
         var localProducts: [LocalProduct] = []

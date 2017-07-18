@@ -68,6 +68,7 @@
 			children = (
 				980F775F1F1C800F00AA3EB2 /* AppDelegate.swift */,
 				980F77741F1C897400AA3EB2 /* ProductManager.swift */,
+				980F77661F1C800F00AA3EB2 /* CoreDataDemo.xcdatamodeld */,
 				980F777A1F1CA20000AA3EB2 /* Main */,
 				980F777B1F1CA21A00AA3EB2 /* AddProduct */,
 				980F77811F1CB5DF00AA3EB2 /* SearchProduct */,
@@ -75,7 +76,6 @@
 				980F77631F1C800F00AA3EB2 /* Main.storyboard */,
 				980F77691F1C800F00AA3EB2 /* Assets.xcassets */,
 				980F776E1F1C800F00AA3EB2 /* Info.plist */,
-				980F77661F1C800F00AA3EB2 /* CoreDataDemo.xcdatamodeld */,
 				980F776B1F1C800F00AA3EB2 /* LaunchScreen.storyboard */,
 			);
 			path = CoreDataDemo;

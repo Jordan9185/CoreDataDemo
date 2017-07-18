@@ -18,22 +18,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="ui4-al-uVH">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="91"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ph6-bz-TJF">
-                                    <rect key="frame" x="0.0" y="20" width="375" height="71"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFo-F0-9tu" userLabel="新增">
-                                            <rect key="frame" x="0.0" y="0.0" width="187.5" height="71"/>
-                                            <state key="normal" title="新增"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="187.5" height="70"/>
+                                            <state key="normal" title="新增">
+                                                <color key="titleShadowColor" red="0.32156862749999998" green="0.25882352939999997" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
                                             <connections>
                                                 <segue destination="z7q-fT-Hal" kind="show" id="Kny-c6-ufg"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M9N-TE-lVW" userLabel="查詢">
-                                            <rect key="frame" x="187.5" y="0.0" width="187.5" height="71"/>
-                                            <state key="normal" title="查詢"/>
+                                            <rect key="frame" x="187.5" y="0.0" width="187.5" height="70"/>
+                                            <state key="normal" title="查詢">
+                                                <color key="titleShadowColor" red="0.32156862749999998" green="0.25882352939999997" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
                                             <connections>
                                                 <segue destination="ghg-0n-Eez" kind="show" id="ixl-A9-h2B"/>
                                             </connections>
@@ -44,14 +48,14 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="ph6-bz-TJF" secondAttribute="bottom" id="JL9-Fe-V1R"/>
-                                <constraint firstItem="ph6-bz-TJF" firstAttribute="top" secondItem="ui4-al-uVH" secondAttribute="top" constant="20" id="TmS-qN-Ili"/>
+                                <constraint firstItem="ph6-bz-TJF" firstAttribute="top" secondItem="ui4-al-uVH" secondAttribute="top" id="TmS-qN-Ili"/>
                                 <constraint firstItem="ph6-bz-TJF" firstAttribute="leading" secondItem="ui4-al-uVH" secondAttribute="leading" id="jFs-8w-tIf"/>
                                 <constraint firstAttribute="trailing" secondItem="ph6-bz-TJF" secondAttribute="trailing" id="yfF-kt-etp"/>
                             </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableCell" rowHeight="116" id="A4I-O5-Axy" customClass="ProductTableViewCell" customModule="CoreDataDemo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="119" width="375" height="116"/>
+                                <rect key="frame" x="0.0" y="98" width="375" height="116"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="A4I-O5-Axy" id="wVy-bV-rl1">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="116"/>

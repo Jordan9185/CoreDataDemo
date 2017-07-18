@@ -15,21 +15,19 @@ class SearchProductViewController: UIViewController {
     @IBOutlet var productNameTextField: UITextField!
 
     @IBAction func searchTapped(_ sender: Any) {
+        
         var results: String = ""
+        
         let products = productManager.searchProduct(productName: productNameTextField.text!)
         
         for product in products {
+            
             results.append("\(product.name!) \n")
+            
         }
         
         searchResultsLabel.text = results
         
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
 
 }

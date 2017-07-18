@@ -29,14 +29,9 @@ class AddProductViewController: UIViewController {
         }
         
         productManager.addProduct(id: id, name: name, price: Double(price)!)
+        
         self.navigationController?.popViewController(animated: true)
         
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
 }

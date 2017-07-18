@@ -18,15 +18,20 @@ class UpdateProductViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let products = productManager.fetchProducts()
+        
         idTextField.text = products[indexOfRow!].id
+        
         nameTextField.text = products[indexOfRow!].name
+        
         priceTextField.text = "\(products[indexOfRow!].price)"
-        // Do any additional setup after loading the view.
+        
     }
 
 
     @IBAction func updateProductTapped(_ sender: Any) {
+        
         productManager.updateProduct(
             indexPath: indexOfRow!,
             id: idTextField.text,
